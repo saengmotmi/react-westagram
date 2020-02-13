@@ -8,8 +8,8 @@ class Nav extends Component {
             <nav>
                 <div className="nav-container">
                     <div className="nav-left">
-                        <a href="main.html"><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/logo.png" /></a>
-                        <a href="main.html"><img id="nav-logo" src="images/logo.png" /></a>
+                        <a href="index.html"><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/logo.png" /></a>
+                        <a href="index.html"><img id="nav-logo" src="images/logo.png" /></a>
                     </div>
                     <div className="search-container">
                         <input className="nav-search" type="text" placeholder="검색" />

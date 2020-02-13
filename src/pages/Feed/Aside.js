@@ -16,8 +16,13 @@ class Aside extends Component {
     // const menus = ["Menu1", "Menu2", "Menu3", "Menu4"]
     // const menuList = menus.map((menu) => (<li>{menu}</li>));
 
-    const storyUsrList = this.props.userData.storyData.map((storyUsr, index) => { return (<AsideStoryElement 
-      id={storyUsr.id}
+    const { myId, myUsrId, myImgSrc, mySrc, myName } = this.props.userData.myAccount;
+    const { asideId, asideUsrId, asideImgSrc, asideSrc, asideTime } = this.props.userData.aside;
+    const { id, usrId, imgSrc, src, time } = this.props.userData.storyData;
+    const { storyData } = this.props.userData;
+
+    const storyUsrList = {storyData}.storyData.map((storyUsr) => { return (<AsideStoryElement 
+      key={storyUsr.id}
       usrId={storyUsr.usrId}
       imgSrc={storyUsr.imgSrc}
       src={storyUsr.src}
@@ -31,14 +36,14 @@ class Aside extends Component {
             <img
               alt="falsekind_님의 프로필 사진"
               className="_6q-tv"
-              src={this.props.userData.myAccount.imgSrc}
+              src={myImgSrc}
             />
           </div>
           <div className="profile-container">
             <div>
-              <a href={this.props.userData.myAccount.imgSrc}>{this.props.userData.myAccount.usrId}</a>
+              <a href={myImgSrc}>{myUsrId}</a>
             </div>
-            <div className="profile-bottom-nickname">{this.props.userData.myAccount.name}</div>
+            <div className="profile-bottom-nickname">{myName}</div>
           </div>
         </div>
         <div className="aside-story">
@@ -50,11 +55,11 @@ class Aside extends Component {
           </div>
           <div className="aside-story-bottom">
             <AsideStoryElement
-              id={this.props.userData.aside.id}
-              usrId={this.props.userData.aside.usrId}
-              imgSrc={this.props.userData.aside.imgSrc}
-              src={this.props.userData.aside.src}
-              time={this.props.userData.aside.time}
+              id={asideId}
+              usrId={asideUsrId}
+              imgSrc={asideImgSrc}
+              src={asideSrc}
+              time={asideTime}
             />
             {storyUsrList}
           </div>
@@ -68,11 +73,11 @@ class Aside extends Component {
           </div>
           <div className="aside-recommend-bottom">
             <AsideStoryElement
-              id={this.props.userData.aside.id}
-              usrId={this.props.userData.aside.usrId}
-              imgSrc={this.props.userData.aside.imgSrc}
-              src={this.props.userData.aside.src}
-              time={this.props.userData.aside.time}
+              id={asideId}
+              usrId={asideUsrId}
+              imgSrc={asideImgSrc}
+              src={asideSrc}
+              time={asideTime}
             />         
           </div>
         </div>

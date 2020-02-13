@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../../components/Nav';
-import FeedMain from './Feed-main';
+import FeedPost from './Feed-post';
 import Aside from './Aside';
 
 class Feed extends Component {
@@ -9,18 +9,18 @@ class Feed extends Component {
         this.state = {
             userData: {
                 aside: {
-                    id: 1,
-                    usrId: "bb_87y",
-                    imgSrc: "/images/story-el-img.jpg",
-                    src: "http://instagram.com/bb_87y",
-                    time: "지금"
+                    asideId: "a",
+                    asideUsrId: "bb_87y",
+                    asideImgSrc: "/images/story-el-img.jpg",
+                    asideSrc: "http://instagram.com/bb_87y",
+                    asideTime: "지금"
                 },
                 myAccount: {
-                    id: 1,
-                    usrId: "falsekind_",
-                    imgSrc: "/images/my-profile-img.jpg",
-                    src: "http://instagram.com/falsekind_",
-                    name: "오종"
+                    myId: "b",
+                    myUsrId: "falsekind_",
+                    myImgSrc: "/images/my-profile-img.jpg",
+                    mySrc: "http://instagram.com/falsekind_",
+                    myName: "오종"
                 },
                 storyData: [
                     {id: 1, usrId: "bb_87y", imgSrc: "/images/story-el-img.jpg", src: "http://instagram.com/bb_87y", time: "지금"},
@@ -30,19 +30,20 @@ class Feed extends Component {
                     {id: 5, usrId: "bb_87y", imgSrc: "/images/story-el-img.jpg", src: "http://instagram.com/bb_87y", time: "지금"},
                     {id: 6, usrId: "bb_87y", imgSrc: "/images/story-el-img.jpg", src: "http://instagram.com/bb_87y", time: "지금"},
                     {id: 7, usrId: "bb_87y", imgSrc: "/images/story-el-img.jpg", src: "http://instagram.com/bb_87y", time: "지금"},
-                    {id: 8, usrId: "bb_87y", imgSrc: "/images/story-el-img.jpg", src: "http://instagram.com/bb_87y", time: "지금"},
+                    {id: 8, usrId: "bb_87y", imgSrc: "/images/story-el-img.jpg", src: "http://instagram.com/bb_87y", time: "지금"}
                 ]
             }
         };
     }
 
     render() {
-        console.log(this.state.승윤);
         return(
-            <div>
+            <div className="body">
                 <Nav />
-                <FeedMain userData={this.state.userData}/>
-                <Aside userData={this.state.userData}/>
+                <main>
+                    <FeedPost userData={this.state.userData} />
+                    <Aside userData={this.state.userData} />
+                </main>
             </div>
         );
     }
