@@ -1,5 +1,408 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  display: flex;
+  background-color: #fafafa;
+}
+
+/* 상단 내비게이터 */
+nav {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+  height: 77px;
+  position: fixed;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.nav-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 975px;
+  padding: 26px 20px;
+}
+
+.nav-container>div>a>img {
+  width: 24px;
+  justify-content: space-around;
+}
+
+.nav-left {
+  position: absolute;
+  display: flex;
+  left: 26px;
+}
+
+.nav-right {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  right: 26px;
+  padding-left: 24px;
+  width: 156px;
+  height: 24px;
+}
+
+#nav-logo {
+  width: 103px;
+  height: 29px;
+  border-left: 1px solid;
+  padding-left: 16px;
+  margin-left: 16px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 215px;
+  height: 28px;
+}
+
+.search-container input, .search-container div {
+  width: inherit;
+  height: inherit;
+  border-style: none;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+}
+
+.nav-search {
+  color: black;
+  position: absolute;
+  border: none;
+  padding: 4px 11px 4px 27px;
+}
+
+.nav-search:focus {
+  outline: none;
+}
+
+.nav-search::placeholder {
+  color: rgb(153, 153, 153);
+}
+
+.nav-over-search {
+  font: 400 13.3333px Arial;
+  font-size: 13.3333px;
+  color: rgb(153, 153, 153);
+  z-index: 1;
+  position: absolute;
+  cursor: text;
+  text-align: center;
+  padding: 4px 0;
+  display: table;
+}
+
+.nav-over-search p {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.nav-over-search:focus {
+  outline: none;
+}
+
+.invisible {
+  display: none;
+}
+
+/* 본문 */
+main {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  top: 137px;
+  margin: 0 auto;
+  width: 935px;
+}
+
+.feeds {
+  top: 52px;
+  border: 1px solid #dbdbdb;
+}
+
+article {
+  background-color: white;
+  width: 614px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+article .post-pic img {
+  width: 614px;
+}
+
+div[class^="post"] {
+  background-color: white;
+}
+
+.post-account-name {
+  font-weight: 600;
+  font-size: 14px;
+  width: 614px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.post-account-name img {
+  width: 32px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.post-like-who {
+  width: 614px;
+  padding: 0 16px;
+  margin-bottom: 8px;
+}
+
+.post-like-who img {
+  width: 20px;
+  border-radius: 50%;
+}
+
+.post-main {
+  width: 100%;
+}
+
+.post-btn {
+  width: 614px;
+  height: 40px;
+  padding: 0 16px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-btn div img {
+  width: 40px;
+  padding: 8px;
+  justify-content: space-around;
+}
+
+.article-comment, .article-text, .comment-list {
+  background-color: white;
+  height: inherit;
+  word-break: break-all;
+}
+
+.comment-list {
+  width: 100%;
+  padding: 0 16px;
+}
+
+.article-text {
+  width: 614px;
+  padding: 0 16px;
+  padding-bottom: 4px;
+}
+
+.article-text a {
+  display: inline;
+  margin-right: 0;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+.comment-list p {
+  margin: 0 0 4px 0;
+}
+
+.comment-form {
+  position: relative;
+  width: 614px;
+  height: 56px;
+  margin-top: 4px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+textarea {
+  display: inline-block;
+  resize: none;
+  width: 554px;
+  height: 22px;
+  left: 0;
+  font: 400 13.3333px Arial;
+  border: none;
+  white-space: pre-wrap;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input[type='button'] {
   padding: 0;
-  font-family: sans-serif;
+  top: 0;
+  border: none;
+  width: 28px;
+  height: 18px;
+  font-weight: 600;
+  background-color: white;
+  font: rgb(153, 153, 153);
+}
+
+.comment-element {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-comment {
+  cursor: pointer;
+}
+
+
+/* 우측 */
+.main-right {
+  display: flex;
+  flex-direction: column;
+  width: 293px;
+}
+
+.aside-profile  {
+  font-size: 14px;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.aside-profile img {
+  border-radius: 50%;
+  width: 50px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.profile-bottom-nickname {
+  font-size: 12px;
+  color: #999999;
+}
+
+.aside-story {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 223px;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 12px;
+}
+
+.aside-story-top {
+  display: flex;
+  justify-content: space-between;
+  width: 291px;
+  height: 19px;
+  margin-top: 12px;
+  padding: 4px 16px;
+  font-size: 14px;
+}
+
+.aside-story-bottom {
+  padding-left: 16px;
+  margin-top: 15px;
+  overflow-y: scroll;
+}
+
+.aside-recommend-bottom {
+  padding-left: 16px;
+  margin-top: 15px;
+}
+
+.aside-story-bottom img, .aside-recommend-bottom img {
+  width: 34px;
+  border-radius: 50%;
+}
+
+.aside-story-element, .aside-recommend-element {
+  width: 258px;
+  height: 52px;
+  display: flex;
+}
+
+.story-bottom-nickname, .recommend-bottom-nickname {
+  font-size: 10px;
+  color: #999999;
+}
+
+.story-container, .recommend-container {
+  width: 199px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.story-left {
+  display: inline;
+  color: #999999;
+  font-weight: 600;
+}
+
+.story-right {
+  display: inline;
+  font-size: 12px;
+}
+
+.aside-recommend {
+  display: flex;
+  flex-direction: column;
+  height: 197px;
+  border: 1px solid #dbdbdb;
+  font-size: 14px;
+  background-color: white;
+}
+
+.aside-recommend-top {
+  display: flex;
+  justify-content: space-between;
+  width: 291px;
+  height: 19px;
+  margin-top: 12px;
+  padding: 4px 16px;
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  font-size: 11px;
+  color: #c7c7c7;
+}
+
+li::after {
+  content: " ·";
+}
+
+li:last-child::after {
+  content: "";
 }
