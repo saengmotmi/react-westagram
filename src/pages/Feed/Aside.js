@@ -20,8 +20,11 @@ class Aside extends Component {
     const { asideId, asideUsrId, asideImgSrc, asideSrc, asideTime } = this.props.userData.aside;
     const { id, usrId, imgSrc, src, time } = this.props.userData.storyData;
     const { storyData } = this.props.userData;
+    console.log(storyData)
+    const liDatas = ['Instagram 정보', '도움말', '홍보 센터', 'API', '채용 정보', '개인정보처리방침', '약관', '디렉터리', '프로필', '해시태그', '언어'];
+    const liDataList = liDatas.map((liData) => { return <li>{liData}</li>});
 
-    const storyUsrList = {storyData}.storyData.map((storyUsr) => { return (<AsideStoryElement 
+    const storyUsrList = storyData.map((storyUsr) => { return (<AsideStoryElement 
       key={storyUsr.id}
       usrId={storyUsr.usrId}
       imgSrc={storyUsr.imgSrc}
@@ -30,7 +33,7 @@ class Aside extends Component {
     />)});
 
     return (
-      <div className="main-right">
+      <aside className="main-right">
         <div className="aside-profile">
           <div>
             <img
@@ -54,13 +57,13 @@ class Aside extends Component {
             </div>
           </div>
           <div className="aside-story-bottom">
-            <AsideStoryElement
+            {/* <AsideStoryElement
               id={asideId}
               usrId={asideUsrId}
               imgSrc={asideImgSrc}
               src={asideSrc}
               time={asideTime}
-            />
+            /> */}
             {storyUsrList}
           </div>
         </div>
@@ -83,20 +86,10 @@ class Aside extends Component {
         </div>
         <div>
           <ul>
-            <li>Instagram 정보</li>
-            <li>도움말</li>
-            <li>홍보 센터</li>
-            <li>API</li>
-            <li>채용 정보</li>
-            <li>개인정보처리방침</li>
-            <li>약관</li>
-            <li>디렉터리</li>
-            <li>프로필</li>
-            <li>해시태그</li>
-            <li>언어</li>
+            {liDataList}
           </ul>
         </div>
-      </div>
+      </aside>
     );
   }
 }

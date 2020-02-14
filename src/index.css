@@ -2,10 +2,14 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0px;
+}
+
 .body {
-  margin: 0;
   display: flex;
   background-color: #fafafa;
+  /* height: 100%; */
 }
 
 /* 상단 내비게이터 */
@@ -122,14 +126,15 @@ main {
   position: relative;
   display: flex;
   justify-content: space-around;
-  top: 137px;
-  margin: 0 auto;
+  margin-top: 137px;
+  /* 높이 조절할 때 top 같은걸로 안함. margin이나 padding으로 */
+  margin-left: auto;
+  margin-right: auto;
   width: 935px;
 }
 
 .feeds {
   top: 52px;
-  border: 1px solid #dbdbdb;
 }
 
 article {
@@ -139,10 +144,12 @@ article {
   flex-direction: column;
   align-items: center;
   font-size: 14px;
+  margin-bottom: 60px;
+  border: 1px solid #dbdbdb;
 }
 
 article .post-pic img {
-  width: 614px;
+  width: 612px;
 }
 
 div[class^="post"] {
@@ -152,7 +159,7 @@ div[class^="post"] {
 .post-account-name {
   font-weight: 600;
   font-size: 14px;
-  width: 614px;
+  width: 612px;
   height: 60px;
   display: flex;
   align-items: center;
@@ -165,7 +172,7 @@ div[class^="post"] {
 }
 
 .post-like-who {
-  width: 614px;
+  width: 612px;
   padding: 0 16px;
   margin-bottom: 8px;
 }
@@ -180,7 +187,7 @@ div[class^="post"] {
 }
 
 .post-btn {
-  width: 614px;
+  width: 612px;
   height: 40px;
   padding: 0 16px;
   margin-top: 4px;
@@ -206,7 +213,7 @@ div[class^="post"] {
 }
 
 .article-text {
-  width: 614px;
+  width: 612px;
   padding: 0 16px;
   padding-bottom: 4px;
 }
@@ -231,8 +238,7 @@ a:visited {
 }
 
 .comment-form {
-  position: relative;
-  width: 614px;
+  width: 612px;
   height: 56px;
   margin-top: 4px;
   padding: 0 16px;
