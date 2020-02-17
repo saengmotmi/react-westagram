@@ -42,8 +42,8 @@ class Feed extends Component {
     }
 
     render() {
-        const postDataList = this.state.postData.map((param) => { return (<FeedPost
-            key={param.myId}
+        const postDataList = this.state.postData.map((param, idx) => { return (<FeedPost
+            key={idx+"article"}
             myUsrId={param.myUsrId}
             myImgSrc={param.myImgSrc}
             mySrc={param.mySrc}

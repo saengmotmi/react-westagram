@@ -18,14 +18,13 @@ class Aside extends Component {
 
     const { myId, myUsrId, myImgSrc, mySrc, myName } = this.props.userData.myAccount;
     const { asideId, asideUsrId, asideImgSrc, asideSrc, asideTime } = this.props.userData.aside;
-    const { id, usrId, imgSrc, src, time } = this.props.userData.storyData;
     const { storyData } = this.props.userData;
-    console.log(storyData)
+    
     const liDatas = ['Instagram 정보', '도움말', '홍보 센터', 'API', '채용 정보', '개인정보처리방침', '약관', '디렉터리', '프로필', '해시태그', '언어'];
-    const liDataList = liDatas.map((liData) => { return <li>{liData}</li>});
+    const liDataList = liDatas.map((liData, idx) => { return <li key={idx+"li"}>{liData}</li>});
 
-    const storyUsrList = storyData.map((storyUsr) => { return (<AsideStoryElement 
-      key={storyUsr.id}
+    const storyUsrList = storyData.map((storyUsr, idx) => { return (<AsideStoryElement 
+      key={idx+"key"}
       usrId={storyUsr.usrId}
       imgSrc={storyUsr.imgSrc}
       src={storyUsr.src}
