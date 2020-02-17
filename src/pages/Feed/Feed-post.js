@@ -33,14 +33,18 @@ class FeedPost extends Component {
 
     _deleteComment = () => {
         // this.setState(this.state.commentData.splice(parseInt(event.target.parentNode.id),1));
-        // filter : 특정 조건에 부합하는 원소만 뽑아내서 새 배열을 만듦
-        
+        this.setState({
+            commentData: this.state.commentData.filter(
+                (str, idx) => str[idx] !== str[parseInt(event.target.parentNode.id)]
+            )
+        });
     }
 
     render() {
         const { key, myUsrId, myImgSrc, mySrc, myPostImgSrc, postBody } = this.props; //피드 뿌릴거 받아온거
         const commentDataList = this.state.commentData.map((param, idx) => { return (<FeedPostComment
                 key = {idx+"comment"}
+                id = {idx+"comment"}
                 usrId = {this.state.commentId}
                 usrSrc = {this.state.commentSrc}
                 comment = {param} //배열도 가능하구나... 근데 필요 없는 거였음
