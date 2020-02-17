@@ -1,13 +1,41 @@
 import React, { Component } from 'react';
 
 class LoginForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: "",
+            pwd: "",
+            valid: false
+        }
+    }
+
+    validCheck = () => {
+        // console.log(this.state.valid); // 애로우 펑션 안쓸거면 bind(this) 써야 함
+        if (event.target.id === "inputid") {
+            this.state.id = event.target.value;
+            this.setValid();
+        } else {
+            this.state.pwd = event.target.value;
+            this.setValid();
+        }
+    }
+
+    setValid = () => { //setState는 중첩해서 쓰면 안됨
+        if ((this.state.id.length * this.state.pwd.length) === 0) {
+            this.setState({valid: false})
+        } else {
+            this.setState({valid: true})
+        }
+    }
+
     render() {
-        console.log(this.props);
         return(
             <div>
-                <input id="inputid" type="input" value={this.props.id} placeholder="전화번호, 사용자 또는 이메일" /><br />
-                <input id="inputpwd" type="input" value={this.props.pwd} placeholder="비밀번호" /><br />
-                <input className="login-btn" type="button" value="로그인" />
+                <input onChange={this.validCheck} id="inputid" type="input" placeholder="전화번호, 사용자 또는 이메일" /><br />
+                <input onChange={this.validCheck} id="inputpwd" type="input" placeholder="비밀번호" /><br />
+                {this.state.valid ? (<input className="login-btn valid" type="button" value="로그인" />) : (<input className="login-btn" type="button" value="로그인" />)}
+                {console.log(this.state.valid)}
             </div>
         );
     }
