@@ -86,6 +86,7 @@ class Aside extends Component {
         <div>
           <ul>
             {liDataList}
+            <p>© 2020 Instagram from Facebook</p>
           </ul>
         </div>
       </aside>

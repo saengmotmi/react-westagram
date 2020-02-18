@@ -22,22 +22,24 @@ class FeedPost extends Component {
             event.preventDefault();
         }
         
-        if ((event.keyCode === 13) && event.target.value !== "") {
+        if (((event.keyCode === 13) && event.target.value !== "") || event.type === 'click') {
             // this.state.commentData.concat(event.target.value);
             this.setState({
                 commentData: this.state.commentData.concat(this.state.inputValue),
                 inputValue: ""
             });
         }
+        console.log(this.state.commentData);
     }
 
     _deleteComment = () => {
         // this.setState(this.state.commentData.splice(parseInt(event.target.parentNode.id),1));
         this.setState({
             commentData: this.state.commentData.filter(
-                (str, idx) => str[idx] !== str[parseInt(event.target.parentNode.id)]
+                (_, idx) => idx !== parseInt(event.target.parentNode.id)
             )
         });
+        console.log(this.state.commentData);
     }
 
     render() {

@@ -10,9 +10,9 @@ class FeedPostComment extends Component {
         const { key, id, usrId, usrSrc, comment } = this.props;
 
         return(
-            <div onClick={this.props.deleteComment} id={id} className="comment-element" key={key}>
+            <div id={id} className="comment-element" key={key}>
                 <p><a href={usrSrc}><b>{usrId}</b></a>&nbsp;{comment}</p>
-                <div className="delete-comment">✖️</div>
+                <div onClick={this.props.deleteComment} className="delete-comment">✖️</div>
             </div>
         );
     }

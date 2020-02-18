@@ -303,10 +303,14 @@ div[class^="post"] {
   padding: 0 16px;
 }
 
+.comment-list div {
+  padding-bottom: 4px;
+}
+
 .article-text {
   width: 612px;
   padding: 0 16px;
-  padding-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .article-text a {
@@ -491,6 +495,13 @@ textarea:focus {
 
 ul {
   list-style: none;
+  padding: 0;
+}
+
+ul p {
+  font-size: 11px;
+  color: #c7c7c7;
+  margin-top: 16px;
 }
 
 li {
